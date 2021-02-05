@@ -2,14 +2,15 @@
 import edgeos
 import asyncio
 import promethus_edgeos_metrics
+import os
 
 
 def main():
 
     # set these
-    server = "<ip address>"
-    username = "<user>"
-    password = "<password>"
+    server = os.getenv('EDGEOS_SERVER')
+    username = os.getenv('EDGEOS_USER')
+    password = os.getenv('EDGEOS_PASS');
     subscriptions = ["interfaces", 'system-stats']
 
     # derive these
